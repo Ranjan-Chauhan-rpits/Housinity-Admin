@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
+import Sidebar from '@/components/Sidebar';
+import Navbar from '@/components/Navbar';
 import { ReduxProvider } from '@/redux/Provider';
-// import ToasterProvider from '@/components/ToasterProvider';
+import ToasterProvider from '@/components/ToasterProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -30,11 +31,19 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
       >
         <ReduxProvider>
+          <ToasterProvider />
+
+          <Sidebar />
+
           {/* Main content area with Navbar and page content */}
-          <div className='w-full'>
+          <div className='ml-52'>
+            <Navbar />
             <main className=''>{children}</main>
           </div>
         </ReduxProvider>
+
+        {/* <main className='w-full'>{children}</main> */}
+        {/* {children} */}
       </body>
     </html>
   );
