@@ -109,7 +109,7 @@ import { BsPeople } from 'react-icons/bs';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // ✅ get current route
+  const pathname = usePathname();
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
@@ -120,7 +120,7 @@ const Sidebar = () => {
       icon: <RxDashboard size={20} />,
     },
     {
-      href: '/properties',
+      href: '/property',
       label: 'Property',
       icon: <BsHouse size={20} />,
     },
@@ -158,7 +158,7 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-52 bg-gray-50 border-r border-gray-300 shadow-lg p-6 z-40 transition-transform duration-300 md:translate-x-0 ${
+        className={`fixed top-0 left-0 h-full w-48 bg-gray-50 border-r border-gray-300 shadow-lg p-6 z-40 transition-transform duration-300 md:translate-x-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:block`}
       >

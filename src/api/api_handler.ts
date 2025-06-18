@@ -10,6 +10,12 @@ export function getAllProperty() {
   return axiosClient.get('/property/all');
 }
 
+// get Property by id
+
+export function getPropertyById() {
+  return axiosClient.post('/property/id/:id');
+}
+
 // add property
 
 // search property

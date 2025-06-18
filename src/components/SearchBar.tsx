@@ -5,6 +5,7 @@ import { useRef, useState } from 'react';
 // import { BiSolidDownArrow } from 'react-icons/bi';
 import { IoSearchOutline } from 'react-icons/io5';
 import { BiDownArrow } from 'react-icons/bi';
+// import { CiFilter } from 'react-icons/ci';
 
 interface filter {
   filterName: string;
@@ -60,7 +61,7 @@ const SearchBar = ({
             setSearchVal(e.target.value);
           }}
         />
-        <IoSearchOutline width={28} height={28} />
+        <IoSearchOutline size={24} />
       </div>
       <div className='w-full'>
         <div className='ml-3 form-group'>
@@ -69,7 +70,7 @@ const SearchBar = ({
             ref={dropdownRef}
           >
             <div
-              className='flex flex-row justify-between items-center h-full w-full'
+              className='flex flex-row justify-between items-center h-full w-full gap-2.5'
               onClick={() => setShowFilter(!showFilter)}
             >
               <span className='self-center'>Search by {filterName}</span>
